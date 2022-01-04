@@ -2,7 +2,7 @@ import Nav from "./nav"
 
 const Layout = ({ children, categories, seo }) => (
   <>
-  <div class="container-lg">
+  <div className="container-lg">
     <Nav categories={categories} />
     {children}
   </div>
