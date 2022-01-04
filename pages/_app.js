@@ -3,7 +3,6 @@ import Head from "next/head";
 import 'bootstrap/dist/css/bootstrap.css';
 import "../styles/global.scss";
 import { createContext } from "react";
-import { useEffect } from "react";
 import { getStrapiMedia } from "../lib/media";
 import { fetchAPI } from "../lib/api";
 
