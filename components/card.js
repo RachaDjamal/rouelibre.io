@@ -4,7 +4,7 @@ import NextImage from "./image"
 
 
 const Cards = ({ article }) => {
-  console.log(article.attributes.image)
+  //console.log(article.attributes.image)
   
   return (
     
