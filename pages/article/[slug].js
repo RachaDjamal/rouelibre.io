@@ -6,12 +6,14 @@ import Layout from "../../components/layout"
 import NextImage from "../../components/image"
 import Seo from "../../components/seo"
 import { getStrapiMedia } from "../../lib/media"
+import 'moment/locale/fr'
 
 const Article = ({ article, categories }) => {
   const imageUrl = getStrapiMedia(article.attributes.image)
   
   const source = article.attributes.content;
-
+  
+  //console.log(date)
   const seo = {
     metaTitle: article.attributes.title,
     metaDescription: article.attributes.description,
@@ -43,8 +45,8 @@ const Article = ({ article, categories }) => {
                 By {article.attributes.writer.data.attributes.name}
               </p>
               <p className="uk-text-meta uk-margin-remove-top">
-                <Moment locale='fr' format="MMM Do YYYY">
-                  {article.attributes.published_at}
+                <Moment locale='fr' format="[Le ]Do MMMM YYYY">
+                  {article.attributes.publishedAt}
                 </Moment>
               </p>
             </div>
