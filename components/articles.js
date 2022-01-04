@@ -6,6 +6,7 @@ const Articles = ({ articles }) => {
   // const leftArticles = articles.slice(0, leftArticlesCount)
   // const rightArticles = articles.slice(leftArticlesCount, articles.length)
   const lastArticles = articles.reverse().slice(0, 4);
+  //console.log(articles[0].attributes.image.data.attributes.formats.thumbnail.url)
 
   return (
     <div className="row">

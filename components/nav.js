@@ -1,31 +1,35 @@
 import React from "react"
 import Link from "next/link"
-import Navbar from "react-bootstrap/Navbar"
-import Container from "react-bootstrap/Container"
-import NavDropdown from "react-bootstrap/NavDropdown"
-import Nav from "react-bootstrap/Nav"
 
-
-const Navigation = ({ categories }) => {
+const Nav = ({ categories }) => {
   return (
-    <Navbar bg="light" expand="lg">
-    <Container>
-      <Navbar.Brand href="/">Rouelibre.io</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-        <Nav >
-          <NavDropdown title="Catégories" id="basic-nav-dropdown">
-          {categories.map((category) => {
+    <div>
+      <nav className="uk-navbar-container" data-uk-navbar>
+        <div className="uk-navbar-left">
+          <ul className="uk-navbar-nav">
+            <li>
+              <Link href="/">
+                <a>Rouelibre</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="uk-navbar-right">
+          <ul className="uk-navbar-nav">
+            {categories.map((category) => {
               return (
-                <NavDropdown.Item key={category.id} href={`/category/${category.attributes.slug}`}>{category.attributes.name}</NavDropdown.Item>
+                <li key={category.id}>
+                  <Link href={`/category/${category.attributes.slug}`}>
+                    <a className="uk-link-reset">{category.attributes.name}</a>
+                  </Link>
+                </li>
               )
             })}
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
+          </ul>
+        </div>
+      </nav>
+    </div>
   )
 }
 
-export default Navigation
+export default Nav
