@@ -10,7 +10,7 @@ const Image = ({ image, style }) => {
 
   return (
     <NextImage
-       loader={loader}
+      loader={loader}
       layout="responsive"
       width={width}
       height={height}

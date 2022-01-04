@@ -2,12 +2,9 @@ import React from "react"
 import Cards from "./card"
 
 const Articles = ({ articles }) => {
-  // const leftArticlesCount = Math.ceil(articles.length / 5)
-  // const leftArticles = articles.slice(0, leftArticlesCount)
-  // const rightArticles = articles.slice(leftArticlesCount, articles.length)
-  const lastArticles = articles.reverse().slice(0, 4);
-  
-
+  const tmp = articles.sort((a, b) => b.id - a.id)
+  const lastArticles = tmp.slice(0, 4);
+  //console.log(lastArticles)
   return (
     <div className="row">
       {lastArticles.map((article) => {
