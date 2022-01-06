@@ -17,7 +17,7 @@ const Nav = ({ categories }) => {
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><Link href="/articles"><a className="dropdown-item" >Tous les articles</a></Link></li>
-                <li><hr class="dropdown-divider"></hr></li>
+                <li><hr className="dropdown-divider"></hr></li>
                 {categories.map((category) => {
                   return (
                     <li key={category.id}>
