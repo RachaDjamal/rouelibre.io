@@ -11,10 +11,7 @@ const Home = ({ articles, categories, homepage }) => {
       
         
           <h1>{homepage.attributes.hero}</h1>
-          <hr></hr>
-          <p>Ce site est actuellement en cours de construction mais sa première version sera viable très prochainement. 🚀</p>
-          <p>Faites moi un coucou ici : <a href="mailto:contact@rouelibre.io">👋</a></p>
-          {/* <Articles articles={articles} /> */}
+          <Articles articles={articles} />
         
       
     </Layout>
