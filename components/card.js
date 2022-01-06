@@ -17,7 +17,7 @@ const Cards = ({ article }) => {
           <h6 className="card-text" id="category">{article.attributes.categories.data[0].attributes.name}</h6>
           <p className="card-text" id="description">{article.attributes.description}</p>
           <Link href={`/article/${article.attributes.slug}`}>
-            <a href="#" className="btn btn-primary stretched-link">Lire en entier</a>
+            <a className="btn btn-primary stretched-link">Lire en entier</a>
           </Link>
         </div>
       </div>

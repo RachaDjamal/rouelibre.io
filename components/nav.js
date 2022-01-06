@@ -11,14 +11,13 @@ const Nav = ({ categories }) => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
-            </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Catégories
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><Link href="/articles"><a className="dropdown-item" >Tous les articles</a></Link></li>
+                <li><hr class="dropdown-divider"></hr></li>
                 {categories.map((category) => {
                   return (
                     <li key={category.id}>
