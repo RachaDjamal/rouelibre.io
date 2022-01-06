@@ -3,7 +3,7 @@ import NextImage from "next/image"
 
 const Image = ({ image, style }) => {
   const { url, alternativeText, width, height } = image.data.attributes
-
+  
   const loader = () => {
     return getStrapiMedia(image)
   }
@@ -17,6 +17,8 @@ const Image = ({ image, style }) => {
       objectFit="contain"
       src={getStrapiMedia(image)}
       alt={alternativeText || ""}
+      unoptimized='true'
+      className='articleImage'
     />
   )
 }
