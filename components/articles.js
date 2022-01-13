@@ -6,10 +6,10 @@ const Articles = ({ articles }) => {
   const lastArticles = tmp.slice(0, 4);
   //console.log(lastArticles)
   return (
-    <div className="row">
+    <div className="uk-grid">
       {lastArticles.map((article) => {
         return (
-          <div className="col-md-auto" key={article.id}>
+          <div className="uk-width-1-4@m" key={article.id}>
               <Cards
                 article={article}
                 key={`article__left__${article.attributes.slug}`}
