@@ -5,9 +5,16 @@ import Seo from "../components/seo"
 import { fetchAPI } from "../lib/api"
 
 const allArticles = ({ articles, categories, homepage }) => {
+
+    const seo = {
+        metaTitle: "Tous les articles",
+        metaDescription: "Tous les articles de rouelibre.io",
+        shareImage: homepage.attributes.image
+    }
+
     return (
       <Layout categories={categories}>
-        <Seo seo={homepage.attributes.seo} />
+        <Seo seo={seo} />
         
           
             <h1>Tous les articles</h1>
