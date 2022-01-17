@@ -9,8 +9,9 @@ export default function Custom404() {
         <>
             <div className="erreur">
                 <h1>🤯</h1>
+                <h2>404</h2>
                 <h2>{text}</h2>
-                <Link href="/"><a  className="">Revenir à la homepage</a></Link>
+                <Link href="/"><a>Revenir à la homepage</a></Link>
             </div>
         </>
         )
