@@ -4,13 +4,36 @@ import "../styles/global.scss";
 import { createContext } from "react";
 import { getStrapiMedia } from "../lib/media";
 import { fetchAPI } from "../lib/api";
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+import * as ga from '../lib/ga';
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+
 
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }) => {
   const { global } = pageProps;
-  
+  const router = useRouter()
+  UIkit.use(Icons);
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url)
+    }
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on('routeChangeComplete', handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+ 
   return (
     <>
       <Head>
