@@ -5,10 +5,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
-              rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css"
-            />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_GA_TRACKING_ID}`}
