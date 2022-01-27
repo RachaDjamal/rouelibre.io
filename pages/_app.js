@@ -5,11 +5,14 @@ import { createContext } from "react";
 import { getStrapiMedia } from "../lib/media";
 import { fetchAPI } from "../lib/api";
 import UIkit from 'uikit';
-import Icons from 'uikit/dist/js/uikit-icons';
 import * as ga from '../lib/ga';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
+library.add(fab, faBars);
 
 
 // Store Strapi Global object in context
@@ -18,7 +21,7 @@ export const GlobalContext = createContext({});
 const MyApp = ({ Component, pageProps }) => {
   const { global } = pageProps;
   const router = useRouter()
-  UIkit.use(Icons);
+
 
   useEffect(() => {
     const handleRouteChange = (url) => {

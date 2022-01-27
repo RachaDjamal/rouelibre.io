@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "next/link"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const Nav = ({ categories }) => {
@@ -54,7 +55,8 @@ const Nav = ({ categories }) => {
           </ul>
         </div>
         <div className="uk-navbar-right">
-          <Link href=""><a className="uk-navbar-toggle uk-icon uk-navbar-toggle-icon" data-uk-navbar-toggle-icon data-uk-toggle="target: #offcanvas-nav-primary"></a></Link>
+          <Link href=""><a className="uk-navbar-toggle  uk-navbar-toggle-icon" data-uk-toggle="target: #offcanvas-nav-primary"><FontAwesomeIcon icon="bars" size="lg" /></a></Link>
+          
         </div>
       </nav>
     </div>
