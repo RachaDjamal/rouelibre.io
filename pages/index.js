@@ -8,10 +8,10 @@ const Home = ({ articles, categories, homepage }) => {
   return (
     <Layout categories={categories}>
       <Seo seo={homepage.attributes.seo} />
-      
         
-          <h1>{homepage.attributes.hero}</h1>
-          <Articles articles={articles} />
+        
+        <h1>{homepage.attributes.hero}</h1>
+        <Articles articles={articles} />
         
       
     </Layout>

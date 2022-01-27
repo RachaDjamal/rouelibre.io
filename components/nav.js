@@ -82,10 +82,6 @@ const Nav = ({ categories }) => {
             <li className="">
                 <Link href="/contact"><a>Contact</a></Link>
             </li>
-            
-            <li><Link href="https://www.instagram.com/rouelibre.io/"><a data-uk-icon="icon: instagram; ratio: 2"></a></Link></li>
-            <li><Link href="https://www.youtube.com/c/Rouelibre"><a data-uk-icon="icon: youtube; ratio: 2"></a></Link></li>
-            
         </ul>
       </div>
     </div>

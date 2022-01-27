@@ -16,10 +16,10 @@ const allArticles = ({ articles, categories, homepage }) => {
       <Layout categories={categories}>
         <Seo seo={seo} />
         
-          
+          <div className="uk-container">
             <h1>Tous les articles</h1>
             <Allarticles articles={articles} />
-          
+          </div>
         
       </Layout>
     )

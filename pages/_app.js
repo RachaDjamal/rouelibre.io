@@ -7,8 +7,9 @@ import { fetchAPI } from "../lib/api";
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import * as ga from '../lib/ga';
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+
 
 
 // Store Strapi Global object in context
@@ -38,7 +39,8 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Head>
         <link rel="shortcut icon" href={getStrapiMedia(global.data.attributes.favicon)} />
-  
+
+        
       </Head>
       <GlobalContext.Provider value={global}>
         <Component {...pageProps} />
