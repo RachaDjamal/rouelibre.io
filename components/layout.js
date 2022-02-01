@@ -3,11 +3,11 @@ import Footer from "./footer"
 
 const Layout = ({ children, categories, seo }) => (
   <>
-    <div className="uk-container">
-      <Nav categories={categories} />
+    <Nav categories={categories} />
+      <div className="uk-container">
         {children}
-      <Footer />
-    </div>
+      </div>
+    <Footer />
   </>
 )
 
