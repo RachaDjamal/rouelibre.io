@@ -7,7 +7,7 @@ const Nav = ({ categories }) => {
   return (
     <>
     <div className="uk-visible@s">
-      <nav className="uk-navbar-container" data-uk-navbar uk-navbar="mode: click">
+      <nav className="uk-navbar uk-navbar-container" data-uk-navbar uk-navbar="mode: click">
         <div className="uk-navbar-left">
           <ul className="uk-navbar-nav">
             <li>

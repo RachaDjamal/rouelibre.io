@@ -18,9 +18,69 @@ body {
     }
 }
 
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: ivory;
+    
+}
 
+@media (min-width: 640px) {
+    .uk-navbar {
+        padding: 0 15px;
+        
+    }
+}
+@media (min-width: 960px) {
+    .uk-navbar {
+        padding: 0 25px;
+    }
+}
+
+nav {
+
+    .fa-lg {
+        font-size: 1.4em;
+    }
+}
 
 .uk-grid>* {
     padding-bottom: 10px;
 }
 
+footer {
+    background-color: ivory;
+    h4 {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    padding: 20px 0;
+    text-align: center;
+    color: #999;
+    font-size: 0.8em;
+    .uk-link-toggle:focus .uk-link, .uk-link-toggle:hover .uk-link, .uk-link:hover, a:hover, a.uk-link-text:hover {
+        text-decoration: none;
+        color: #111;
+    }
+    .social .svg-inline--fa {
+        vertical-align: -0.34em;
+    }
+}
+
+.uk-text-truncate {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+            line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+
+.uk-card {
+    border-radius: 5px;
+    box-shadow: 0px 16px 40px rgba(119, 119, 119, 0.15);
+    img {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+   
+}
