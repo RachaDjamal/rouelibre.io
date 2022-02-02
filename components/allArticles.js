@@ -8,7 +8,7 @@ const Allarticles = ({ articles }) => {
     <div className="uk-grid">
       {lastArticles.map((article) => {
         return (
-          <div className="uk-width-1-4@m" key={article.id}>
+          <div className="uk-width-1-2@s" key={article.id}>
               <Cards
                 article={article}
                 key={`article__left__${article.attributes.slug}`}

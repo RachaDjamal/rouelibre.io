@@ -18,12 +18,13 @@ const Cards = ({ article }) => {
           <h5 className="uk-card-title" id="title">{article.attributes.title}</h5>
           {categories.map((category) => {
                         return (
-                          <span key={category.id} className="uk-badge">
+                          <span key={category.id} className="uk-card-badge uk-label">
                             {category.attributes.name}
                           </span>
                           )
                         })}
           <p id="description" className="uk-text-truncate">{article.attributes.description}</p>
+          <button class="uk-button uk-button-text">lire en entier</button>
         </div>
       </div>
       </a>
