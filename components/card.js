@@ -24,7 +24,7 @@ const Cards = ({ article }) => {
                           )
                         })}
           <p id="description" className="uk-text-truncate">{article.attributes.description}</p>
-          <button class="uk-button uk-button-text">lire en entier</button>
+          <button className="uk-button uk-button-text">lire en entier</button>
         </div>
       </div>
       </a>
