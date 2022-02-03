@@ -1,19 +1,17 @@
+import Link from "next/link"
 import ReactMarkdown from "react-markdown"
 import rehypeRaw from 'rehype-raw'
 import Moment from "react-moment"
 import { fetchAPI } from "../../lib/api"
 import Layout from "../../components/layout"
-import NextImage from "../../components/image"
+import NextImage from "../../components/thumbnail"
 import Seo from "../../components/seo"
 import { getStrapiMedia } from "../../lib/media"
 import 'moment/locale/fr'
 
 const Article = ({ article, categories }) => {
-  const imageUrl = getStrapiMedia(article.attributes.image)
-  
   const source = article.attributes.content;
   
-  //console.log(date)
   const seo = {
     metaTitle: article.attributes.title,
     metaDescription: article.attributes.description,
@@ -21,35 +19,43 @@ const Article = ({ article, categories }) => {
     article: true,
   }
 
+  const url = getStrapiMedia(article.attributes.image);
+  const avatar = getStrapiMedia(article.attributes.writer.data.attributes.avatar);
+
   return (
     <Layout categories={categories.data}>
       <Seo seo={seo} />
-      <NextImage image={article.attributes.image} />
-      <div>
-        <h1>{article.attributes.title}</h1>
+
+      <div className="uk-container">
+        <h1 className="uk-text-center" id="title">{article.attributes.title}</h1>
+        <div className="uk-text-center">
+          {categories.data.map((category) => {
+                            return (
+                              <span className="uk-label" key={category.id} id={category.attributes.slug}>
+                                <Link href={`/category/${category.attributes.slug}`}>
+                                  <a>{category.attributes.name}</a>
+                                </Link>
+                              </span>
+                              )
+                            })}
+        </div>
+        <p className="uk-text-center" id="description">{article.attributes.description}</p>
       </div>
-      <div className="uk-section">
-        <div className="uk-container uk-container-small">
-          <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+      <div className="uk-height-large uk-background-cover uk-light uk-flex" data-uk-parallax="bgy: -400; media: @m;" style={{backgroundImage: " url(" + url + ")"}}>
+      </div>
+      <div className="uk-container">
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>
           {source}
-            </ReactMarkdown>
-          <hr className="uk-divider-small" />
-          <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
-            <div>
-              {article.attributes.writer.data.attributes.avatar && (
-                <NextImage image={article.attributes.writer.data.attributes.avatar} />
-              )}
-            </div>
-            <div className="uk-width-expand">
-              <p className="uk-margin-remove-bottom">
-                By {article.attributes.writer.data.attributes.name}
-              </p>
-              <p className="uk-text-meta uk-margin-remove-top">
-                <Moment locale='fr' format="[Le ]Do MMMM YYYY">
+        </ReactMarkdown>
+        <hr className="uk-divider-small" />
+        <div className="uk-grid uk-flex-middle" data-uk-height-match="target: > div > .uk-border-circle" data-uk-grid>
+          <div>
+              <img src={avatar} alt="Image" className="uk-border-circle" height="70px" width="70px" />
+          </div>
+          <div>
+              <p>Par {article.attributes.writer.data.attributes.name}<br></br><Moment className="uk-text-meta" locale='fr' format="[Le ]Do MMMM YYYY">
                   {article.attributes.publishedAt}
-                </Moment>
-              </p>
-            </div>
+                </Moment></p>
           </div>
         </div>
       </div>

@@ -4,9 +4,7 @@ import Footer from "./footer"
 const Layout = ({ children, categories, seo }) => (
   <>
     <Nav categories={categories} />
-      <div className="uk-container">
-        {children}
-      </div>
+      {children}
     <Footer />
   </>
 )
