@@ -2,6 +2,7 @@ import App from "next/app";
 import Head from "next/head";
 import "../styles/global.scss";
 import { createContext } from "react";
+import UIkit from 'uikit';
 import { getStrapiMedia } from "../lib/media";
 import { fetchAPI } from "../lib/api";
 import { library } from '@fortawesome/fontawesome-svg-core'
